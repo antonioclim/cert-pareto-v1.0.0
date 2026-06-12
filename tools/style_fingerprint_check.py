@@ -13,6 +13,8 @@ import statistics
 import sys
 from pathlib import Path
 
+
+# These terms are diagnostic targets, not manuscript vocabulary.
 FOCAL_WORDS = {
     "delve", "intricate", "meticulous", "pivotal", "realm", "navigate",
     "landscape", "tapestry", "foster", "elevate", "underscore", "showcasing",

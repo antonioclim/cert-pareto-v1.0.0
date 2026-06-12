@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cert-pareto"
+version = "0.2.1"
+description = "A solver-agnostic checker for finite Pareto certificate claims, with exact rational arithmetic, tolerance-aware floating-point checks, robust margins, PAC audits and hash-pinned JSON artefacts."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Antonio Clim", email = "antonio.clim@csie.ase.ro" }]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["pareto", "multi-objective", "certificate", "verification", "optimisation", "audit", "reproducibility"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.urls]
+Homepage = "https://github.com/antonioclim/cert-pareto"
+Documentation = "https://github.com/antonioclim/cert-pareto/blob/main/docs/API.md"
+Repository = "https://github.com/antonioclim/cert-pareto"
+Issues = "https://github.com/antonioclim/cert-pareto/issues"
+Changelog = "https://github.com/antonioclim/cert-pareto/blob/main/CHANGELOG.md"
+"JOSS paper" = "https://github.com/antonioclim/cert-pareto/blob/main/paper/paper.md"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6", "build>=1.2", "twine>=5"]
+figures = ["matplotlib>=3.8"]
+docs = ["pdoc>=15"]
+
+[project.scripts]
+cert-pareto = "cert_pareto.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.coverage.run]
+source = ["cert_pareto"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true

@@ -1,0 +1,28 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "cert-pareto",
+  "version": "0.2.1",
+  "description": "A solver-agnostic checker for finite Pareto certificate claims, with exact rational arithmetic, tolerance-aware floating-point checks, robust margins, PAC audits and hash-pinned JSON artefacts.",
+  "codeRepository": "https://github.com/antonioclim/cert-pareto",
+  "issueTracker": "https://github.com/antonioclim/cert-pareto/issues",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.10-3.13",
+  "keywords": [
+    "Pareto optimality",
+    "multi-objective optimisation",
+    "certificate checking",
+    "verification",
+    "reproducibility"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Antonio",
+      "familyName": "Clim",
+      "@id": "https://orcid.org/0000-0003-4745-0431",
+      "email": "antonio.clim@csie.ase.ro"
+    }
+  ]
+}

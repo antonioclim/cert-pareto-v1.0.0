@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use cert-pareto in research, please cite the archived software release. After JOSS acceptance, also cite the JOSS article."
+type: software
+title: "cert-pareto: exact and tolerance-aware certificate checking for Pareto claims in finite decision spaces"
+version: "0.2.1"
+date-released: "2026-06-12"
+license: MIT
+repository-code: "https://github.com/antonioclim/cert-pareto"
+url: "https://github.com/antonioclim/cert-pareto"
+authors:
+  - family-names: Clim
+    given-names: Antonio
+    orcid: "https://orcid.org/0000-0003-4745-0431"
+keywords:
+  - Pareto optimality
+  - certificate checking
+  - multi-objective optimisation
+  - exact arithmetic
+  - verification
+  - reproducibility

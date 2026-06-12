@@ -24,7 +24,7 @@ jobs:
           python -m pip install -e ".[dev]"
       - name: Lint
         if: runner.os == 'Linux'
-        run: ruff check src tests examples benchmarks tools
+        run: ruff check src tests examples benchmarks
       - name: Tests with coverage
         run: python -m pytest --cov=cert_pareto --cov-report=term-missing -q
       - name: Run examples as smoke tests

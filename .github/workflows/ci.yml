@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package with dev extras
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Lint
+        if: runner.os == 'Linux'
+        run: ruff check src tests examples benchmarks tools
+      - name: Tests with coverage
+        run: python -m pytest --cov=cert_pareto --cov-report=term-missing -q
+      - name: Run examples as smoke tests
+        shell: bash
+        run: |
+          for f in examples/*.py; do python "$f" > /dev/null; done
+      - name: Verify shipped artefact hash via CLI
+        run: |
+          python examples/export_certificate_demo.py > /dev/null
+          python -m cert_pareto verify results/certificate_artifact.json
+      - name: Build source and wheel distributions
+        if: runner.os == 'Linux' && matrix.python-version == '3.13'
+        run: |
+          python -m build
+          python -m twine check dist/*

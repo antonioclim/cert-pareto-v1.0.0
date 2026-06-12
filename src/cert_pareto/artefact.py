@@ -7,7 +7,7 @@ serialisation (sorted keys, minimal separators, UTF-8, non-ASCII allowed).
 A verified hash means the record is unaltered since emission. It does not
 re-establish the mathematics: validity requires re-running the checker on
 the recorded inputs. The two notions are kept apart on purpose; an artefact
-that conflates them is theatre.
+that conflates them would be misleading.
 
 The canonicalisation here is self-consistent and sufficient for
 self-verification. Interoperable signing across independent
@@ -24,15 +24,15 @@ from typing import Any, Dict, Mapping
 
 #: Versioned, resolvable schema identifier. The file ships in the
 #: repository at schema/certificate-v1.schema.json; the URI below resolves
-#: once the repository is public (see RELEASING.md for the release-time
+#: after the v0.2.2 tag is pushed (see RELEASING.md for the release-time
 #: check).
 SCHEMA_URI = (
-    "https://antonioclim.github.io/cert-pareto/schema/certificate-v1.schema.json"
+    "https://raw.githubusercontent.com/antonioclim/cert-pareto/v0.2.2/"
     "schema/certificate-v1.schema.json"
 )
 
 SOFTWARE_NAME = "cert-pareto"
-SOFTWARE_VERSION = "0.2.1"
+SOFTWARE_VERSION = "0.2.2"
 
 
 def _canonical_json(data: Mapping[str, Any]) -> bytes:

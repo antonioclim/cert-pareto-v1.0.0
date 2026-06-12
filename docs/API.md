@@ -109,7 +109,7 @@ Returns `lower`, `equal` or `higher` for the ratio at `x` compared with the rati
 
 ## Artefacts and CLI
 
-### `make_certificate_artifact(result, *, problem_id, software_version="0.2.1")`
+### `make_certificate_artifact(result, *, problem_id, software_version="0.2.2")`
 
 Wraps a result dictionary into a canonical JSON-compatible artefact with package version, schema URI and SHA-256 digest.
 

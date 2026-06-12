@@ -1,22 +1,28 @@
 # Quality assurance record
 
-## Local validation performed for v0.2.1 hardening
+This document records the public validation discipline for `cert-pareto`. It is written for reviewers, contributors and future maintainers. It intentionally avoids local-machine paths and private preparation notes; every command below can be run from a fresh clone.
 
-The following commands should pass before a public release:
+## Release validation commands
+
+Run these commands before each tagged release:
 
 ```bash
-python -m pytest --cov=cert_pareto --cov-report=term-missing -q
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev]"
 python -m compileall -q src tests examples benchmarks
-python tests/run_tests.py
+python -m pytest --cov=cert_pareto --cov-report=term-missing -q
+ruff check src tests examples benchmarks
 for f in examples/*.py; do python "$f" > /dev/null; done
+python examples/export_certificate_demo.py > /dev/null
+python -m cert_pareto verify results/certificate_artifact.json
 python benchmarks/benchmark_scaling.py --max-exp 5 --repeats 1
+python -m build
+python -m twine check dist/*
 ```
-
-The submission kit generated on 12 June 2026 passed the pytest suite with 44 tests and 98.64% overall coverage in the local container used for preparation. The zero-dependency runner passed 41 no-fixture tests and skipped three pytest-fixture tests, as intended. The exact values should be regenerated after any public repository changes.
 
 ## Test philosophy
 
-The package is a checker. The highest-risk failures are therefore not numerical performance failures but false verdicts. Tests should cover:
+The package is a checker. The highest-risk failures are false verdicts, not slow throughput. Tests therefore prioritise verdict semantics and edge cases:
 
 - supported exact certificates;
 - unsupported Pareto-efficient points that fail weighted-sum certificates;
@@ -29,15 +35,12 @@ The package is a checker. The highest-risk failures are therefore not numerical 
 
 ## Packaging checks
 
-If `build` and `twine` are available locally, run:
+Every release should build a source distribution and a wheel, then validate both with `twine check`. The CI workflow includes the same checks so that a broken distribution cannot be released accidentally.
 
-```bash
-python -m build
-python -m twine check dist/*
-```
+## Benchmark policy
 
-These commands are also included in the recommended CI workflow.
+Benchmark results are reported as indicative, not as contractual performance guarantees. Absolute timings depend on processor, Python version and operating system. Scaling behaviour and reproducibility of the benchmark script matter more than a single timing value.
 
-## Style and paper hygiene
+## Integrity policy
 
-The JOSS paper was checked with `tools/style_fingerprint_check.py`. For the v0.2.1 hardening kit, the script reported 834 prose words, 41 sentences, mean sentence length 19.37, sentence-length coefficient of variation 0.43, zero focal-word occurrences and zero counted generic phrase patterns. This script is not an authorship detector; it is a low-cost warning system for repetitive or over-smoothed prose.
+The JSON artefact hash verifies record integrity only. It does not prove mathematical validity, authorship authenticity or correctness of the underlying data. Mathematical validity is re-established only by re-running the checker on the recorded problem and certificate data.

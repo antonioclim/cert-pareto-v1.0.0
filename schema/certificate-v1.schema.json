@@ -1,10 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/antonioclim/cert-pareto/main/schema/certificate-v1.schema.json",
+  "$id": "https://raw.githubusercontent.com/antonioclim/cert-pareto/v0.2.2/schema/certificate-v1.schema.json",
   "title": "cert-pareto certificate artefact",
   "description": "A portable, hash-pinned record of one a posteriori Pareto certificate check. The integrity digest binds the record to its bytes under the package's canonical JSON serialisation; it does not establish mathematical validity, which requires re-running the checker on the recorded inputs.",
   "type": "object",
-  "required": ["schema", "software", "problem_id", "certificate_result", "integrity"],
+  "required": [
+    "schema",
+    "software",
+    "problem_id",
+    "certificate_result",
+    "integrity"
+  ],
   "additionalProperties": false,
   "properties": {
     "schema": {
@@ -14,11 +20,19 @@
     },
     "software": {
       "type": "object",
-      "required": ["name", "version"],
+      "required": [
+        "name",
+        "version"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "const": "cert-pareto" },
-        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+" }
+        "name": {
+          "const": "cert-pareto"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+"
+        }
       }
     },
     "problem_id": {
@@ -28,7 +42,9 @@
     },
     "certificate_result": {
       "type": "object",
-      "required": ["verdict"],
+      "required": [
+        "verdict"
+      ],
       "properties": {
         "verdict": {
           "type": "string",
@@ -45,22 +61,69 @@
             "invalidInput"
           ]
         },
-        "arithmetic": { "enum": ["float", "exact"] },
-        "candidate": { "type": "string" },
-        "lambdas": { "type": "array", "items": { "type": "string" } },
-        "active_constraints": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
-        "multipliers": { "type": "array", "items": { "type": "string" } },
-        "tol": { "type": ["number", "null"] },
-        "margin": { "type": ["string", "null"] },
-        "violator_count": { "type": "integer", "minimum": 0 },
-        "violators": { "type": "array", "items": { "type": "string" } },
-        "violators_truncated": { "type": "boolean" },
-        "message": { "type": "string" }
+        "arithmetic": {
+          "enum": [
+            "float",
+            "exact"
+          ]
+        },
+        "candidate": {
+          "type": "string"
+        },
+        "lambdas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "active_constraints": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "multipliers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tol": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "margin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "violator_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "violators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "violators_truncated": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
       }
     },
     "integrity": {
       "type": "object",
-      "required": ["sha256_without_integrity"],
+      "required": [
+        "sha256_without_integrity"
+      ],
       "additionalProperties": false,
       "properties": {
         "sha256_without_integrity": {

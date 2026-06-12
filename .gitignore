@@ -9,3 +9,11 @@ htmlcov/
 .ruff_cache/
 results/*.json
 benchmarks/*.csv
+
+# Local pre-submission and validation material not intended for the public repository
+LOCAL_ONLY/
+validation/
+release_artifacts/
+*.docx
+*.pdf
+*.pptx

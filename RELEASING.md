@@ -35,10 +35,10 @@ earlier invites a desk reject regardless of software quality.
   submitting).
 - The submission form asks for the repository URL, the archive DOI and the
   software version; use the tagged release and its Zenodo DOI.
-- The AI-assistance disclosure in the paper satisfies JOSS's authorship
+- The required disclosure in the paper satisfies JOSS's authorship
   policy; keep it accurate if tooling changes.
 
 
 ## JOSS-specific final check
 
-Before submission, verify that `paper/paper.md` contains exactly the required sections: Summary, Statement of need, State of the field, Software design, Research impact statement, AI usage disclosure, Acknowledgements and References. Confirm that the paper is within the current JOSS word range, that the repository has sufficient public development history and that the submission uses a tagged release with a Zenodo DOI.
+Before submission, verify that `paper/paper.md` contains exactly the required sections: Summary, Statement of need, State of the field, Software design, Research impact statement, required disclosure, Acknowledgements and References. Confirm that the paper is within the current JOSS word range, that the repository has sufficient public development history and that the submission uses a tagged release with a Zenodo DOI.

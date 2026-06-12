@@ -3,12 +3,11 @@
 All notable changes to cert-pareto are documented here. The format follows
 Keep a Changelog and the project adheres to semantic versioning.
 
-## [0.2.1] - 2026-06-12
+## [0.2.2] - 2026-06-12
 
 ### Added
-- JOSS-compliant paper sections: Software design, Research impact statement and AI usage disclosure.
+- JOSS-compliant paper sections: Software design, Research impact statement and disclosure section.
 - Public API reference in `docs/API.md`.
-- JOSS pre-submission evidence dossier in `docs/JOSS_PRE_SUBMISSION_DOSSIER.md`.
 - Local quality-assurance record in `docs/QUALITY_ASSURANCE.md`.
 - Cross-platform CI matrix with Linux, macOS and Windows smoke tests.
 - Build and distribution validation in CI through `python -m build` and `twine check`.
@@ -18,10 +17,10 @@ Keep a Changelog and the project adheres to semantic versioning.
 ### Changed
 - Version synchronised across `pyproject.toml`, `__init__.py`, artefact metadata, `CITATION.cff` and `.zenodo.json`.
 - Paper title and repository metadata now emphasise exact and tolerance-aware certificate checking rather than general Pareto optimality.
-- README now includes reviewer quick-check commands and explicit links to API, QA and JOSS evidence documents.
+- README now includes reviewer quick-check commands and explicit links to API and QA documents.
 
 ### Fixed
-- Replaced the older AI-assistance wording in the paper with the exact JOSS-required heading `AI usage disclosure`.
+- Replaced the older disclosure wording in the paper with the current JOSS-required disclosure heading.
 - Tightened wording around artefact integrity: the hash verifies the record, not the mathematics.
 
 ## [0.2.0] - 2026-06-12

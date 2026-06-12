@@ -1,5 +1,0 @@
-|K|=10^3: float 0.0010s (1044 ns/alt)  exact 0.0051s (5127 ns/alt)
-|K|=10^4: float 0.0081s (809 ns/alt)  exact 0.0498s (4980 ns/alt)
-|K|=10^5: float 0.0844s (844 ns/alt)  exact 0.5016s (5016 ns/alt)
-csv: benchmarks/scaling.csv
-figure: figures/figure4_benchmark.png

@@ -1,0 +1,6 @@
+Ground truth for C by enumeration: paretoEfficient
+  weights ('1/2', '1/2'): notCertifiedByThisCertificate
+  weights ('1/5', '4/5'): notCertifiedByThisCertificate
+  weights ('4/5', '1/5'): notCertifiedByThisCertificate
+Supported point B on the segment A-C of a second toy:
+  weights ('1/2', '1/2'): certifiedExactParetoEfficient  margin=0

@@ -1,0 +1,18 @@
+............................................                             [100%]
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.13.5-final-0 ________________
+
+Name                          Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------------
+src/cert_pareto/__init__.py       8      0      0      0   100%
+src/cert_pareto/__main__.py       3      0      2      1    80%   3->exit
+src/cert_pareto/artefact.py      29      0      2      0   100%
+src/cert_pareto/cli.py           44      0      6      0   100%
+src/cert_pareto/finite.py       146      1     64      2    99%   193, 285->287
+src/cert_pareto/pac.py           36      0      8      0   100%
+src/cert_pareto/ratios.py        22      0      8      0   100%
+src/cert_pareto/robust.py        36      1     14      1    96%   65
+src/cert_pareto/verdicts.py      14      0      0      0   100%
+-------------------------------------------------------------------------
+TOTAL                           338      2    104      4    99%
+Required test coverage of 95.0% reached. Total coverage: 98.64%

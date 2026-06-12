@@ -1,0 +1,2 @@
+integrity OK  (recorded verdict: certifiedExactParetoEfficient)
+note: a valid hash certifies the record, not the mathematics; re-run the checker on the recorded inputs to re-establish validity.

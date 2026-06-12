@@ -1,0 +1,7 @@
+file: paper/paper.md
+words: 834
+sentences: 41
+mean_sentence_length: 19.37
+sentence_length_cv: 0.43
+focal_words: {}
+phrase_counts: {}

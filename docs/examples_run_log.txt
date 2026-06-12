@@ -1,0 +1,7 @@
+RUN examples/exact_supported.py
+RUN examples/exact_vs_tolerance.py
+RUN examples/export_certificate_demo.py
+RUN examples/fractional_metric_demo.py
+RUN examples/pac_audit_demo.py
+RUN examples/robust_margin_demo.py
+RUN examples/unsupported_counterexample.py

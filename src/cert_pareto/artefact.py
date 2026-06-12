@@ -27,7 +27,7 @@ from typing import Any, Dict, Mapping
 #: once the repository is public (see RELEASING.md for the release-time
 #: check).
 SCHEMA_URI = (
-    "https://raw.githubusercontent.com/antonioclim/cert-pareto/main/"
+    "https://antonioclim.github.io/cert-pareto/schema/certificate-v1.schema.json"
     "schema/certificate-v1.schema.json"
 )
 

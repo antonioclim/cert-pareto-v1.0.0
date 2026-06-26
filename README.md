@@ -1,5 +1,10 @@
 # cert-pareto
 
+> **Archived research artefact.**
+> This repository supports the earlier a posteriori Pareto-certificate manuscript and its archived reproducibility kit.
+> The substantially reconstructed verification-domain profile framework is maintained separately at:
+> https://github.com/antonioclim/verification-domain-profiles
+
 A posteriori Pareto certificate checking for finite decision spaces, with
 exact rational arithmetic, tolerance-aware floating point, worst-case robust
 margins, zero-violation PAC audits and hash-pinned JSON certificate
